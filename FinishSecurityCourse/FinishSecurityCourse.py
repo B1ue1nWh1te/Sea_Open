@@ -21,7 +21,7 @@ def Login():
     # 获取时间戳
     TimeStamp = GetTimeStamp()
 
-    print("正在获取登录二维码")
+    print("正在获取登录二维码") 
 
     # 访问登录二维码接口
     LoginBarCodeApi = f"https://weiban.mycourse.cn/pharos/login/genBarCodeImageAndCacheUuid.do?timestamp={TimeStamp}"
@@ -168,7 +168,6 @@ def Study(tenantCode, token, userId, userProjectId):
                                 userCourseId = re.findall('userCourseId\\u003d(.*?)\\u0026tenantCode', data3)[0]
 
                             # 完成学习接口
-                            # callback=jQuery16408715299049597398_1626153832988&
                             TimeStamp = int(round(time.time()*1000))
                             FinishApi = f"https://weiban.mycourse.cn/pharos/usercourse/finish.do?userCourseId={userCourseId}&tenantCode={tenantCode}&_={TimeStamp}"
                             rf = requests.get(FinishApi, headers=Headers)
