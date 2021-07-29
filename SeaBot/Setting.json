@@ -1,0 +1,8 @@
+{
+    "EnterpriseWechat": {
+        "CorpID": "这里填写企业微信的CorpID",
+        "CorpSecret": "这里填写企业微信的CorpSecret",
+        "AgentID": "这里填写企业微信的AgentID",
+        "ManagerID": "这里填写企业微信的ManagerID"
+    }
+}
