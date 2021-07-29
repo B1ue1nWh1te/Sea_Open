@@ -10,7 +10,10 @@
 每个项目文件夹中的`README.md`会向你介绍它们有什么用途以及如何使用。
 
 # Project
+
 - [安全微课自动刷课脚本](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/FinishSecurityCourse)
+- [自动体温打卡脚本](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/Clockin)
+- [SeaBot 推送机器人](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/SeaBot)
 
 # License
 
