@@ -151,7 +151,7 @@ def ClockIn(LoginedHeaders, ClockinInformation):
         Latitude = ClockinInformation[5]
         Temperature = ClockinInformation[6]
         ClockInUrl = "https://fangkong.hnu.edu.cn/api/v1/clockinlog/add"
-        message = {
+        '''message = {
             "Longitude": Longitude,
             "Latitude": Latitude,
             "RealProvince": Province,
@@ -162,6 +162,41 @@ def ClockIn(LoginedHeaders, ClockinInformation):
             "MorningTemp": Temperature,
             "NightTemp": Temperature,
             "tripinfolist": []
+        }'''
+        message = {
+            "Temperature": Temperature,
+            "RealProvince": Province,
+            "RealCity": City,
+            "RealCounty": Country,
+            "RealAddress": Address,
+            "MorningTemp": Temperature,
+            "NightTemp": Temperature,
+            "IsUnusual": "0",
+            "UnusualInfo": "",
+            "IsTouch": "0",
+            "IsInsulated": "0",
+            "IsSuspected": "0",
+            "IsDiagnosis": "0",
+            "tripinfolist": [{
+                "aTripDate": "",
+                "FromAdr": "",
+                "ToAdr": "",
+                "Number": "",
+                "trippersoninfolist": []
+            }],
+            "toucherinfolist": [],
+            "dailyinfo": {
+                "IsVia": "0",
+                "DateTrip": ""
+            },
+            "IsInCampus": "0",
+            "IsViaHuBei": "0",
+            "IsViaWuHan": "0",
+            "InsulatedAddress": "",
+            "TouchInfo": "",
+            "IsNormalTemperature": "1",
+            "Longitude": Longitude,
+            "Latitude": Latitude
         }
         Data = json.dumps(message)
         ClockInDict = requests.post(
