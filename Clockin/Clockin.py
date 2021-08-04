@@ -246,7 +246,7 @@ def ClockLine(Account):
             RetryAccount.append(Account)
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
             return 0
         District = ClockinInformation[0] + \
             ClockinInformation[1] + ClockinInformation[2]
@@ -255,7 +255,7 @@ def ClockLine(Account):
                                                                                Information["姓名"], Information["班级"], Information["全校已打卡人数"], District)
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
             return 0
         Log("[{}]正在尝试打卡".format(Username))
         Status = ClockIn(LoginedHeaders, ClockinInformation)
@@ -266,20 +266,20 @@ def ClockLine(Account):
                 Username, Information["姓名"], Information["班级"], Information["全校已打卡人数"], CInformation)
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
         elif (Status[0] == "打卡异常"):
             Message = "[打卡失败] [{}]在打卡时出现程序异常".format(Username)
             RetryAccount.append(Account)
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
         elif (Status[0] == "其他异常"):
             Message = "[打卡失败] [{}]在打卡时出现其他问题\n提示为:{}".format(
                 Username, Status[1])
             RetryAccount.append(Account)
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
 
 
 # 运行开始
@@ -314,12 +314,12 @@ def Finish():
             Message = "[打卡已完成]\n[目前全校已打卡人数]{}".format(Sum)
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
         else:
             Message = "[检查已完成]\n[目前全校已打卡人数]{}".format(Sum)
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
         Log("程序正常结束\n" + "-" * 50)
         LogFile.close()
     except Exception:
@@ -341,7 +341,7 @@ def ClockMain():
             Message = "[连接失败]\n目标页面异常，将在3分钟后再次尝试连接"
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
             time.sleep(180)
             Try = requests.get(Url, headers=Headers, timeout=30)
             Code = Try.status_code
@@ -349,12 +349,12 @@ def ClockMain():
                 Message = "[重连成功]"
                 Log(Message)
                 Pusher.PushToEnterpriseWechat(
-                    Message, "text", "manager", Title="自动打卡")
+                    "text", "manager", Message, Title="自动打卡")
             else:
                 Message = "[连接失败]警告：主函数已退出。"
                 Log(Message)
                 Pusher.PushToEnterpriseWechat(
-                    Message, "text", "manager", Title="自动打卡")
+                    "text", "manager", Message, Title="自动打卡")
                 return 0
         for Account in AllAccount:
             ClockLine(Account)
@@ -362,7 +362,7 @@ def ClockMain():
             Message = "即将对之前出现异常的账户进行重新尝试"
             Log(Message)
             Pusher.PushToEnterpriseWechat(
-                Message, "text", "manager", Title="自动打卡")
+                "text", "manager", Message, Title="自动打卡")
             for Account in RetryAccount:
                 ClockLine(Account)
         Finish()
