@@ -222,23 +222,23 @@ def ClockLine(Account):
     if (Status == "账号或密码错误"):
         Message = "[登录失败] [{}]\n账号与密码不匹配\n警告:请手动打卡!".format(Username)
         Log(Message)
-        Pusher.PushToEnterpriseWechat(Message, "text", "manager", Title="自动打卡")
+        Pusher.PushToEnterpriseWechat("text", "manager", Message, Title="自动打卡")
     elif (Status == "登录异常"):
         Message = "[登录失败] [{}]在登录时出现程序异常".format(Username)
         RetryAccount.append(Account)
         Log(Message)
-        Pusher.PushToEnterpriseWechat(Message, "text", "manager", Title="自动打卡")
+        Pusher.PushToEnterpriseWechat("text", "manager", Message, Title="自动打卡")
     elif (Status == "其他异常"):
         Message = "[登录失败] [{}]\n在登录时出现其他问题\n提示为:{}".format(
             Username, list(LoginedHeaders)[1])
         RetryAccount.append(Account)
         Log(Message)
-        Pusher.PushToEnterpriseWechat(Message, "text", "manager", Title="自动打卡")
+        Pusher.PushToEnterpriseWechat("text", "manager", Message, Title="自动打卡")
     elif (Status == "解码异常"):
         Message = "[登录失败] [{}]在登录时解码异常"
         RetryAccount.append(Account)
         Log(Message)
-        Pusher.PushToEnterpriseWechat(Message, "text", "manager", Title="自动打卡")
+        Pusher.PushToEnterpriseWechat("text", "manager", Message, Title="自动打卡")
     else:
         Information = GetInformation(LoginedHeaders)
         if (list(Information)[0] == "获取信息异常"):
@@ -303,7 +303,7 @@ def Start():
     except Exception:
         ExceptionInformation = sys.exc_info()
         Message = "[运行异常]警告：开始函数运行异常已退出。异常信息：{}".format(ExceptionInformation)
-        Pusher.PushToEnterpriseWechat(Message, "text", "manager", Title="自动打卡")
+        Pusher.PushToEnterpriseWechat("text", "manager", Message, Title="自动打卡")
         return 0
 
 
@@ -370,7 +370,7 @@ def ClockMain():
         ExceptionInformation = sys.exc_info()
         Message = "[运行异常]警告:主函数运行异常 已退出\n异常信息:{}".format(ExceptionInformation)
         Log(Message)
-        Pusher.PushToEnterpriseWechat(Message, "text", "manager", Title="自动打卡")
+        Pusher.PushToEnterpriseWechat("text", "manager", Message, Title="自动打卡")
         return 0
 
 
