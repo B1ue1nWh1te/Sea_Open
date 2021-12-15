@@ -6,8 +6,8 @@
 
 每个项目文件夹中的`README.md`会向你介绍它们有什么用途以及如何使用。
 
-[![Python Version](https://img.shields.io/badge/python3-blue)](https://www.python.org/)
-[![Sea_Open](https://img.shields.io/badge/SeaOpen-blue)](https://github.com/B1ue1nWh1te/Sea_Open)
+[![Python Version](https://img.shields.io/badge/python-3+-blue)](https://www.python.org/)
+[![Sea_Open](https://img.shields.io/badge/SeaOpen-purple)](https://github.com/B1ue1nWh1te/Sea_Open)
 [![GitHub stars](https://img.shields.io/github/stars/B1ue1nWh1te/Sea-Open.svg?style=flat-square)](https://github.com/B1ue1nWh1te/Sea-Open/stargazers)
 [![GitHub license](https://img.shields.io/github/license/B1ue1nWh1te/Sea-Open.svg?style=flat-square)](https://github.com/B1ue1nWh1te/Sea-Open/blob/master/LICENSE)
 
