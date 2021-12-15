@@ -13,15 +13,19 @@ Headers = {
 }
 
 # 获取时间戳
+
+
 def GetTimeStamp():
     return round(time.time())
 
 # 登录
+
+
 def Login():
     # 获取时间戳
     TimeStamp = GetTimeStamp()
 
-    print("正在获取登录二维码") 
+    print("正在获取登录二维码")
 
     # 访问登录二维码接口
     LoginBarCodeApi = f"https://weiban.mycourse.cn/pharos/login/genBarCodeImageAndCacheUuid.do?timestamp={TimeStamp}"
@@ -45,7 +49,7 @@ def Login():
 
     # 扫码验证
     BarCodeCheckApi = f"https://weiban.mycourse.cn/pharos/login/barCodeWebAutoLogin.do?timestamp={TimeStamp}"
-    data = requests.post(BarCodeCheckApi, headers=Headers,data=BarCodePayload).json()
+    data = requests.post(BarCodeCheckApi, headers=Headers, data=BarCodePayload).json()
 
     if(data["code"] != '0'):
         print("登录失败 请检查扫码情况")
@@ -77,6 +81,8 @@ def Login():
         Study(tenantCode, token, userId, userProjectId)
 
 # 刷课主函数
+
+
 def Study(tenantCode, token, userId, userProjectId):
     try:
         CourseType = {'3': "必修课程", '1': "匹配课程", '2': "自选课程"}
@@ -162,13 +168,12 @@ def Study(tenantCode, token, userId, userProjectId):
 
                                 # 仍无法获取userCourseId，跳过
                                 if(data3 == ""):
-                                    print(
-                                        f"[{Name1}-{Name2}-{Name3}]无法获取userCourseId 已跳过")
+                                    print(f"[{Name1}-{Name2}-{Name3}]无法获取userCourseId 已跳过")
                                     continue
                                 userCourseId = re.findall('userCourseId\\u003d(.*?)\\u0026tenantCode', data3)[0]
 
                             # 完成学习接口
-                            TimeStamp = int(round(time.time()*1000))
+                            TimeStamp = int(round(time.time() * 1000))
                             FinishApi = f"https://weiban.mycourse.cn/pharos/usercourse/finish.do?userCourseId={userCourseId}&tenantCode={tenantCode}&_={TimeStamp}"
                             rf = requests.get(FinishApi, headers=Headers)
                             if(rs.status_code == 200 and rf.status_code == 200):
@@ -176,7 +181,7 @@ def Study(tenantCode, token, userId, userProjectId):
                                 print(f"[{Name1}-{Name2}-{Name3}]已自动完成")
                             else:
                                 print(f"[{Name1}-{Name2}-{Name3}]失败")
-            print("[{}]已完成\n".format(CourseType[chooseType]))    
+            print("[{}]已完成\n".format(CourseType[chooseType]))
         print("自动刷课完成")
     except requests.exceptions.ConnectionError:
         print("连接断开 即将重试")

@@ -1,0 +1,6 @@
+requests>=2.26.0
+loguru>=0.5.3
+gevent==21.8.0
+Werkzeug==0.16.1
+Flask==0.10.1
+Flask-Cors==3.0.10
