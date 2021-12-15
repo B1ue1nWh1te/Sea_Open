@@ -16,7 +16,10 @@
 # 已收录的小项目
 
 - [安全微课自动刷课脚本](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/FinishSecurityCourse)
+
 - [自动体温打卡脚本](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/Clockin)
+
+- [网易云音乐 API 微服务](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/EaseApi)
 
 # 开源许可
 
