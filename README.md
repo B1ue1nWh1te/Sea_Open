@@ -8,18 +8,18 @@
 
 [![Python Version](https://img.shields.io/badge/python-3+-blue)](https://www.python.org/)
 [![Sea_Open](https://img.shields.io/badge/SeaOpen-purple)](https://github.com/B1ue1nWh1te/Sea_Open)
-[![GitHub stars](https://img.shields.io/github/stars/B1ue1nWh1te/Sea-Open.svg?style=flat-square)](https://github.com/B1ue1nWh1te/Sea-Open/stargazers)
-[![GitHub license](https://img.shields.io/github/license/B1ue1nWh1te/Sea-Open.svg?style=flat-square)](https://github.com/B1ue1nWh1te/Sea-Open/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/B1ue1nWh1te/Sea_Open.svg?style=flat-square)](https://github.com/B1ue1nWh1te/Sea_Open/stargazers)
+[![GitHub license](https://img.shields.io/github/license/B1ue1nWh1te/Sea_Open.svg?style=flat-square)](https://github.com/B1ue1nWh1te/Sea_Open/blob/master/LICENSE)
 
 </div>
 
 # 已收录的小项目
 
-- [安全微课自动刷课脚本](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/FinishSecurityCourse)
+- [安全微课自动刷课脚本](https://github.com/B1ue1nWh1te/Sea_Open/tree/main/FinishSecurityCourse)
 
-- [自动体温打卡脚本](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/Clockin)
+- [自动体温打卡脚本](https://github.com/B1ue1nWh1te/Sea_Open/tree/main/Clockin)
 
-- [网易云音乐 API 微服务](https://github.com/B1ue1nWh1te/Sea-Open/tree/main/EaseAPI)
+- [网易云音乐 API 微服务](https://github.com/B1ue1nWh1te/Sea_Open/tree/main/EaseAPI)
 
 # 开源许可
 

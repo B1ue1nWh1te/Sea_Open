@@ -1,5 +1,0 @@
-gmpy2
-requests
-Pillow
-pwntools
-pycrypto
