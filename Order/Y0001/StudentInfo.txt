@@ -1,0 +1,4 @@
+aaa,006,geography:99.5
+xxx,003,chinese:85.0
+Xiaomi,001,math:88.5
+ttt,004,math:80.0
